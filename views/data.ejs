@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
+    <title>
+        Data
+    </title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Municipality</th>
+            <th>WardNo</th>
+            <th>Mobile</th>
+            <th>SC</th>
+            <th>DOTorTC</th>
+            <th>DOT</th>
+            <th>TC</th>
+            <th>DateRequest</th>
+            <th>Machine</th>
+            <th>DurationDay</th>
+            <th>DurationHours</th>
+            <th>Paid</th>
+            <th>KIS Users</th>
+            <th>Propose</th>
+            <th>Time/Date</th>
+        </tr>
+
+
+        <% for(var i =0 ;i < data.length; i++) {%>
+            <tr>
+                <td>
+                    <%= data[i][1]["Name"]%>
+                </td>
+                <td>
+                    <%= data[i][1]["Municipality"]%>
+                </td>
+                <td>
+                    <%= data[i][1]["WardNo"]%>
+                </td>
+                <td>
+                    <%= data[i][1]["Tel"]%>
+                </td>
+                <td>
+                    <%= data[i][1]["SC"]%>
+                </td>
+
+                <td>
+                    <%= data[i][1]["DOTorTC"]%>
+                </td>
+                <td>
+                    <%= data[i][1]["DOT"]%>
+                </td>
+                <td>
+                    <%= data[i][1]["TC"]%>
+                </td>
+                <td>
+                    <%= data[i][1]["DateRequest"]%>
+                </td>
+                <td>
+                    <%= data[i][1]["Machine"]%>
+                </td>
+                <td>
+                    <%= data[i][1]["DurationDay"]%>
+                </td>
+                <td>
+                    <%= data[i][1]["DurationHours"]%>
+                </td>
+                <td>
+                    <%= data[i][1]["paid"]%>
+                </td>
+                <td>
+                    <%= data[i][1]["kisUser"]%>
+                </td>
+                <td>
+                    <%= data[i][1]["propose"]%>
+                </td>
+                <td>
+                    <%= data[i][1]["timenow"]%>
+                </td>
+
+            </tr>
+            <%}%>
+    </table>
+
+    <center>
+    <div id="container-download">
+    <h1>Download Data</h1>
+
+    <button class="download" onclick="downloadCSV()"> Download </button>
+</div>
+</center>
+</body>
+<script>
+
+    const data = '<%- JSON.stringify(data) %>';
+    const datajson = JSON.parse(data);
+    var csvDataArray = [];
+
+    var csv = 'SN,Name,Municipality,WardNo,Mobile,SC,DOTorTC,DOT,TC,DateRequest,Machine,DurationDay,DurationHours,Paid,KIS Users,Propose,Time&Date\n'
+    for(var i = 0;i<datajson.length;i++){
+
+        var name = datajson[i][1]["Name"];
+        var municipality = datajson[i][1]["Municipality"];
+        var wardno = datajson[i][1]["WardNo"];
+        var tel = datajson[i][1]["Tel"];
+        var sc = datajson[i][1]["SC"];
+        var dotortc = datajson[i][1]["DOTorTC"];
+        var dot = datajson[i][1]["DOT"];
+        var tc = datajson[i][1]["TC"];
+        var datareq = datajson[i][1]["DateRequest"];
+        var machine = datajson[i][1]["Machine"];
+        var durationday = datajson[i][1]["DurationDay"];
+        var DurationHours = datajson[i][1]["DurationHours"];
+        var paid = datajson[i][1]["paid"];
+        var kissuser = datajson[i][1]["kisUser"];
+        var propose = datajson[i][1]["propose"];
+        var timenow = datajson[i][1]["timenow"];
+
+        csvDataArray.push([i+1,name,municipality,wardno,tel,sc,dotortc,dot,tc,datareq,machine,durationday,DurationHours,paid,kissuser,propose,timenow]);
+
+    }
+
+    console.log(csvDataArray);
+
+    csvDataArray.forEach(function(row){
+        csv += row.join(',');
+        csv += '\n'
+    })
+
+    console.log(csv)
+
+    function downloadCSV(){
+
+    var hiddenElement = document.createElement('a');
+    hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+    hiddenElement.target = '_blank';
+    
+    //provide the name for the CSV file to be downloaded
+    hiddenElement.download = 'requestKIS.csv';
+    hiddenElement.click()
+}
+
+    
+
+
+
+</script>
+
+</html>

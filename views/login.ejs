@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <center>
+        <div class="topTitle">
+            Agricultural Machinery Hire Login
+        </div>
+       <form action="/logindata" class="login-box" method="post">
+        <input type="text" class="inputboxlogin" placeholder="username" name="username"> <br>
+        <input type="password" class="inputboxlogin" placeholder="password" name="password"> <br>
+        <input type="submit" value="submit" class="btn-index">
+       </form>
+<br>
+<div class="erroelog" style="color: red;">
+    <%= log %>
+</div>
+    </center>
+</body>
+</html>

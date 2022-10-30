@@ -1,0 +1,196 @@
+* {
+    margin: 0px 0px;
+}
+
+.topTitle {
+    padding: 30px;
+    color: white;
+    background-color: green;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.makeCenter {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lableitem {
+    margin: 28px 5px;
+}
+
+.inputpart {
+    margin: 23px 10px;
+    position: relative;
+    bottom: 10px;
+}
+
+.mun {
+    position: relative;
+    bottom: 65px;
+}
+
+.wardNoC {
+    position: relative;
+    bottom: 75px;
+    left: 5px;
+}
+
+.tol {
+    position: relative;
+    bottom: 85px;
+}
+
+.SC {
+    position: absolute;
+    left: 10px;
+    bottom: 30px;
+}
+
+.dotortc {
+    position: relative;
+    left: 5px;
+    bottom: 40px;
+}
+
+.machineRq {
+    position: relative;
+    left: 5px;
+    bottom: 10px;
+}
+
+.reDate {
+    position: relative;
+    left: 5px;
+    top: 15px;
+}
+
+.submit {
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+
+.sucess {
+    background-color: rgb(22, 106, 22);
+    padding: 60px 0px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.dataUse {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    font-weight: bold;
+}
+
+.kissCl {
+    position: relative;
+    bottom: 80px;
+    margin: 20px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+#ScDiv2 {
+    position: relative;
+    bottom: 58px;
+}
+
+#ScDiv {
+    height: 30px;
+}
+
+.btn-index {
+    text-decoration: none;
+    background: green;
+    color: white;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.btn-index:hover {
+    text-decoration: none;
+    background: rgb(255, 238, 0);
+    color: white;
+    padding: 12px;
+    border-radius: 30px;
+}
+
+.linker {
+    margin: 40px 0px;
+}
+
+.nametop {
+    position: relative;
+    bottom: 45px;
+}
+
+.dotortcin {
+    position: relative;
+    top: 10px;
+}
+
+.SCpush {
+    position: relative;
+    top: 30px;
+}
+
+.propose {
+    position: relative;
+    bottom: 40px;
+}
+
+.durationfix {
+    position: relative;
+    top: 15px;
+}
+
+.paymentfix {
+    position: relative;
+    top: 20px;
+}
+
+.login-box{
+    margin: 20px;
+}
+
+.inputboxlogin{
+    margin: 10px;
+    border: 2px green solid;
+    height: 30px;
+    padding: 5px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.download{
+    border: 2px green solid;
+    height: 30px;
+    background-color: white;
+    border-radius: 30px;
+
+}

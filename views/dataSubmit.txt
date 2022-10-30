@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <center>
+        <div class="topTitle">
+            Agricultural Machinery Hire Request Form
+        </div>
+    </center>
+    <form action="/fromData" method="post">
+        <div class="makeCenter">
+            <div class="lablelist">
+                <p class="lableitem">Name</p>
+                <p class="lableitem">Municipality</p>
+                <p class="lableitem">KIS User</p>
+                <p class="lableitem">Ward</p>
+                <p class="lableitem">Mobile</p>
+                <div id="ScDiv">
+                    <p class="lableitem">SC</p>
+                </div>
+                <p id="dotortcSel">
+                    <select name="DOTorTC" id="Doid" onclick="selector2()">
+                    <option value="DOT">DOT</option>
+                    <option value="TC">TC</option>
+                  </select>
+                </p>
+
+                <p class="lableitem">Purpose of Renting</p>
+
+                <p class="lableitem">Required Machine</p>
+                <p class="lableitem">Date Request</p>
+                <p class="lableitem">Duration Day - Hours</p>
+                <p class="lableitem">Payment</p>
+            </div>
+            <div class="inputSec">
+                <input type="text" name="Name" class="inputpart" placeholder="Full Name"> <br>
+                <select name="Municipality" class="inputpart mun" id="munID" onclick="selector1()">
+                    <option value="Shivasatakshi">Shivasatakshi</option>
+                    <option value="Gauriganj">Gauriganj</option>
+                    <option value="Gauradaha">Gauradaha</option>
+                    <option value="Kamal">Kamal</option>
+                  </select> <br>
+
+                <select name="kisUser" class="kissCl" id="kissID" onclick="selector3()">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                  </select> <br>
+
+                <p class="wardNoC">
+                    Select Municipality
+                </p>
+                <br>
+                <input type="tel" name="Tel" class="inputpart tol"> <br>
+                <div id="ScDiv2">
+                    <input type="text" name="SC">
+                </div>
+                <p class="dotortc" id="dotortcOP">
+                    Select DOT or TC
+                </p> <br>
+
+                <select name="Propose" class="propose">
+                    <option value="channel repair and maintenance">channel repair and maintenance</option>
+                    <option value="Other (farm activity, Etc)">Other (farm activity, Etc)</option>
+                  </select> <br>
+
+                <select name="MachineRe" class="machineRq" id="machineSele">
+                    <option value="Mobile drill">Mobile drier</option>
+                    <option value="Thrasher">Thresher</option>
+                    <option value="Planter">Planter</option>
+                    <option value="Tractor">Tractor</option>
+                    <option value="Maze Planter">Maze Planter</option>
+                    <option value="Land leveling">Land leveler</option>
+                    <option value="Other">Other</option>
+                  </select> <br>
+                <input type="date" name="DateR" class="reDate"> <br>
+                <select name="DurationDay" class="inputpart" id="daytime">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                <select name="DurationHours" class="inputpart">
+                    <option value="1">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="21">22</option>
+                    <option value="21">23</option>
+                    <option value="21">24</option>
+                  </select>
+                <br>
+                <select name="paid">
+                    <option value="Paid">Paid</option>
+                    <option value="Credit">Credit</option>
+                  </select>
+
+                <div class="cost">
+
+                </div>
+            </div>
+
+        </div>
+        <center>
+            <input type="submit" value="Submit" class="submit">
+        </center>
+    </form>
+</body>
+<script src="main.js "></script>
+
+</html>
