@@ -2,12 +2,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const dbmodel = require('./model/dbmodel');
+require('dotenv').config()
 
 app = express();
 const port = process.env.PORT || 5000;
 
 //mondoDB
-const dbURL = "mongodb+srv://AGdata:agdata123456@agdata.wh4nanw.mongodb.net/?retryWrites=true&w=majority";
+const dbURL = process.env.MONGOAPI;
 mongoose.connect(dbURL)
     .then((result) => {
         app.listen(port, () => {
@@ -27,24 +28,23 @@ app.get('/', (req, res) => {
     res.render("index", { title: "Portel" });
 });
 
-app.get('/login',(req,res) => {
-    res.render("login",{log :""});
+app.get('/login', (req, res) => {
+    res.render("login", { log: "" });
 })
 
-app.post('/logindata',(req,res)=>{
-    if(req.body.username == 'KIS' && req.body.password == 'wua'){
+app.post('/logindata', (req, res) => {
+    if (req.body.username == 'KIS' && req.body.password == 'wua') {
         dbmodel.find()
-        .then((result) => {
-            const entries = Object.entries(result);
-            res.render('data', { data: entries, jsonDat: entries });
+            .then((result) => {
+                const entries = Object.entries(result);
+                res.render('data', { data: entries, jsonDat: entries });
 
-        }).
-    catch((err) => {
-        console.log(err);
-    })
-    }
-    else{
-        res.render("login",{log :"Worng Username And Password"})
+            }).
+        catch((err) => {
+            console.log(err);
+        })
+    } else {
+        res.render("login", { log: "Worng Username And Password" })
     }
 })
 
